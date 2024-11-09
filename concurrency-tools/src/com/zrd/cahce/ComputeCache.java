@@ -39,7 +39,7 @@ public class ComputeCache<A,V> implements Computable<A,V> {
                 System.out.println("从FutureTask调用了计算函数");
                 ft.run();
             }
-        }
+        } 
         return future.get();
     }
 

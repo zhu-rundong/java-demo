@@ -14,6 +14,7 @@ public class OneFutureDemo {
         ExecutorService executorService = Executors.newFixedThreadPool(10);
         Future<Integer> submit = executorService.submit(new CallableTask());
         try {
+            //一旦调用get()方法，无论任务是否执行完毕都会导致阻塞
             System.out.println(submit.get());
         } catch (InterruptedException | ExecutionException e) {
             throw new RuntimeException(e);
