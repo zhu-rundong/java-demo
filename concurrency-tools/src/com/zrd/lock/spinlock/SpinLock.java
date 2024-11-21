@@ -22,7 +22,7 @@ public class SpinLock {
         Thread currentThread = Thread.currentThread();
         sign.compareAndSet(currentThread,null);
     }
-
+ 
     public static void main(String[] args) {
         SpinLock spinLock = new SpinLock();
         Runnable runnable = () -> {
