@@ -9,7 +9,8 @@ import java.util.concurrent.atomic.AtomicStampedReference;
  * @Date 2024/11/21
  **/
 public class ABADemo {
-    static AtomicStampedReference<Integer> atomicStampedReference = new AtomicStampedReference<Integer>(100,1);
+    //AtomicStampedReference 携带版本号的引用类型原子类，解决修改过几次问题
+    static AtomicStampedReference<Integer> atomicStampedReference = new AtomicStampedReference<>(100,1);
     public static void main(String[] args) {
         new Thread(()->{
             System.out.println(Thread.currentThread().getName()+"第一次版本号："+ atomicStampedReference.getStamp());
