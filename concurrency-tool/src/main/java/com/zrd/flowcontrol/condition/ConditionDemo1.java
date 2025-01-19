@@ -9,6 +9,17 @@ import java.util.concurrent.locks.ReentrantLock;
  * @Author ZRD
  * @Date 2024/9/22
  **/
+/**
+ Condition接口
+ ◆ 控制线程的“等待”和“唤醒”
+ ◆ 方法：
+     ① await()：阻塞线程
+     ② signal()：唤醒被阻塞的线程
+     ③ signalAll()会唤起所有正在等待的线程。
+     ◆ 注意：
+     ① 调用await()方法时必须持有锁，否则会抛出异常
+     ② Condition和Object#await/notify方法用法一样，两者await方法都会释放锁
+ */
 public class ConditionDemo1 {
     private final ReentrantLock lock = new ReentrantLock();
     private final Condition condition = lock.newCondition();

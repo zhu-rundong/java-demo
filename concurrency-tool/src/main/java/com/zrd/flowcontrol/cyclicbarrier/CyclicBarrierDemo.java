@@ -9,6 +9,14 @@ import java.util.concurrent.CyclicBarrier;
  * @Author ZRD
  * @Date 2024/9/23
  **/
+/*
+    CyclicBarrier循环栅栏：
+    ◆ 线程会等待，直到线程到了事先规定的数目，然后触发执行条件进行下一步动作
+    ◆ 场景：并行计算
+    ◆ 方法：
+        ① new CyclicBarrier(int parties, Runnable barrierAction)参数1集结线程数，参数2凑齐之后执行的任务
+        ② await()：阻塞当前线程，待凑齐线程数量之后继续执行
+ */
 public class CyclicBarrierDemo {
     public static void main(String[] args) {
         CyclicBarrier cyclicBarrier = new CyclicBarrier(5, new Runnable() {

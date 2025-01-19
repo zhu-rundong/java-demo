@@ -10,6 +10,15 @@ import java.util.concurrent.Executors;
  * @Author ZRD
  * @Date 2024/9/22
  **/
+/**
+ CountDownLatch计数门闩：
+ ◆ 倒数结束之前，一直处于等待状态，直到数到0，等待线程才继续工作。
+ ◆ 场景：购物拼团、分布式锁
+ ◆ 方法：
+     ① new CountDownLatch(int count)
+     ② await()：调用此方法的线程会阻塞，支持多个线程调用，当计数为0，则唤醒线程
+     ③ countdown()：其他线程调用此方法，计数减1
+ */
 public class CountDownLatchDemo1 {
     public static void main(String[] args) throws InterruptedException {
         CountDownLatch countDownLatch = new CountDownLatch(5);
