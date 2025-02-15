@@ -1,4 +1,4 @@
-package com.zrd.nio.chat.version1;
+package com.zrd.nio.chat;
 
 import java.util.Scanner;
 
